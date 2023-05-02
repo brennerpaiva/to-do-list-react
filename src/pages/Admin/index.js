@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./admin.css";
 
+import { auth } from '../../firebaseConection'
+import { signOut } from  'firebase/auth'
+
 export default function Admin() {
   const [tarefaInput, setTarefaInput] = useState("");
 
@@ -8,6 +11,10 @@ export default function Admin() {
     e.preventDefault();
     alert("clicou");
     console.log(tarefaInput);
+  }
+
+  async function handleLogout() {
+    await signOut(auth);
   }
 
   return (
@@ -20,7 +27,7 @@ export default function Admin() {
           onChange={(e) => setTarefaInput(e.target.value)}
           placeholder="Digite sua tarefa..."
         />
-        <button type="submit">Registar Tarefa</button>
+        <button type="submit" className="btn-register">Registar Tarefa</button>
       </form>
 
       <article className="list">
@@ -32,7 +39,7 @@ export default function Admin() {
         </div>
       </article>
 
-      <button className="btn-logout">Sair</button>
+      <button className="btn-logout" onClick={handleLogout}>Sair</button>
     </div>
   );
 }
