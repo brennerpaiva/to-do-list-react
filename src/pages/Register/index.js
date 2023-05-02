@@ -1,16 +1,28 @@
 import { useState } from "react";
 import "./register.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {auth} from "../../firebaseConection"
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  function handleRegister(e) {
+  async function handleRegister(e) {
     e.preventDefault();
 
     if (email !== "" && password !== "") {
-      alert("teste");
+      await createUserWithEmailAndPassword(auth, email, password)
+      .then(() =>{
+        alert("conta criada com sucesso")
+        navigate('/admin', {replace: true})
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
     } else {
       alert("Preencha todos os campos");
     }
