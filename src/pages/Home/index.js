@@ -65,8 +65,10 @@ export default function Home() {
               <label>Senha</label>
             </div>
             <button type="submit">Acessar</button>
+            <Link to="/register" className="button-link">
+              Não possui uma conta? Cadastre-se
+            </Link>
           </form>
-          <Link to="/register" className="button-link">Não possui uma conta? Cadastre-se</Link>
         </div>
       </section>
     </div>

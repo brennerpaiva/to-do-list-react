@@ -10,6 +10,7 @@
 
 .admin-container h1 {
     margin-bottom: 28px;
+    color: white;
 }
 
 textarea {
@@ -30,7 +31,7 @@ textarea {
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(54, 34, 34, 0.65);
+    background-color: rgba(53, 33, 33, 0.651);
     border-radius: 5px;
     margin-bottom: 12px;
     justify-content: center;

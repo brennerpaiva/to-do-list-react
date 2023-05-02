@@ -16,13 +16,12 @@ section#login {
     transform: translate(-50%, -50%);
 }
 
-section#login > div#imagem {
+section#login > #imagem {
     display: block;
-    background: url(../../images/home.jpg);
+    background: url(../imageregister/register.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:  left center;
-    
 }
 
 section#login > div#formulario {
@@ -52,12 +51,10 @@ form > div.campo {
 
 div.campo > label{
     display: none;
-
 }
 
 div.campo > i {
-    color: white;
-    
+    color: white;   
     font-size: 1.7em;
     width: 40px;
     padding: 6px;
@@ -121,6 +118,14 @@ form > a.botao > i {
 }
 
 form > .button-link {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.button-link {
     display: flex;
     justify-content: center;
     text-align: center;

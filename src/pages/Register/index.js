@@ -30,13 +30,12 @@ export default function Register() {
 
   return (
     <div className="home-container">
-      <section id="login">
+      <section id="register">
         <div id="imagem"></div>
         <div id="formulario">
-          <h1>Register</h1>
+          <h1>Cadastre-se</h1>
           <p>
-            Seja bem-vindo(a) novamente. Faça login para acessar sua conta e
-            poder fazer as configurações no seu ambiente.
+            Seja bem-vindo(a)! Faça seu cadastro para acessar sua conta e poder fazer as configurações no seu ambiente.
           </p>
 
           <form onSubmit={handleRegister}>
@@ -63,7 +62,9 @@ export default function Register() {
             </div>
             <button type="submit">Cadastrar</button>
           </form>
-          <Link to="/"className="button-link">Já possui uma conta?</Link>
+          <Link to="/" className="button-link">
+            Já possui uma conta?
+          </Link>
         </div>
       </section>
     </div>
