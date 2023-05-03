@@ -84,18 +84,19 @@ export default function Admin() {
       </form>
 
       {tarefas.map((item) => {
-        return(
-        <article className="list" key={item.id}>
-          <p>{item.tarefa}</p>
+        return (
+          <article className="list" key={item.id}>
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+            <p>{item.tarefa}</p>
 
-          <div>
-            <button>Editar</button>
-            <button className="btn-delete">Concluir</button>
-          </div>
-        </article>
-      )})}
+            <div>
+              <ion-icon className="edit" name="create-outline"></ion-icon>
+              <ion-icon name="trash"></ion-icon>
+            </div>
+          </article>
+        );})}
 
-      <button className="btn-logout" onClick={handleLogout}>
+      <button class="btn-logout" onClick={handleLogout}>
         Sair
       </button>
     </div>
