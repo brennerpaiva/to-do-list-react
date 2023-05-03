@@ -1,14 +1,26 @@
 import { useState, useEffect } from "react";
 
+import icon from "../../images/checkmark-circle-outline.svg";
 import { auth, db } from "../../firebaseConection";
 import { signOut } from "firebase/auth";
-import { addDoc, collection, onSnapshot, query, orderBy, where } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  where,
+  doc,
+  deleteDoc,
+  updateDoc,
+} from "firebase/firestore";
 
 import "./admin.css";
 
 export default function Admin() {
   const [tarefaInput, setTarefaInput] = useState("");
   const [user, setUser] = useState("");
+  const [edit, setEdit] = useState({});
 
   const [tarefas, setTarefas] = useState([]);
 
@@ -16,13 +28,16 @@ export default function Admin() {
     async function loadTarefas() {
       const userDetail = localStorage.getItem("@detailUser");
       setUser(JSON.parse(userDetail));
-      console.log(user);
 
       if (userDetail) {
         const data = JSON.parse(userDetail);
 
-        const tarefaRef = collection(db, "tarefas")
-        const q = query(tarefaRef, orderBy("created", "desc"), where("userUid", "==", data?.uid))
+        const tarefaRef = collection(db, "tarefas");
+        const q = query(
+          tarefaRef,
+          orderBy("created", "desc"),
+          where("userUid", "==", data?.uid)
+        );
         const unsub = onSnapshot(q, (snapshot) => {
           let lista = [];
 
@@ -31,14 +46,14 @@ export default function Admin() {
               id: doc.id,
               tarefa: doc.data().tarefa,
               userUid: doc.data().userUid,
-            })
-          })
+            });
+          });
 
           setTarefas(lista);
-        })
+        });
       }
     }
-    
+
     loadTarefas();
   }, []);
 
@@ -48,6 +63,11 @@ export default function Admin() {
     if (tarefaInput === "") {
       alert("digite uma tarefa!");
       return;
+    }
+
+    if(edit?.id) {
+      handleUpdateTarefa();
+      return
     }
 
     await addDoc(collection(db, "tarefas"), {
@@ -68,35 +88,75 @@ export default function Admin() {
     await signOut(auth);
   }
 
+  async function deleteTarefa(id) {
+    const docRef = doc(db, "tarefas", id);
+    await deleteDoc(docRef);
+  }
+
+  async function editTarefa(item) {
+      setTarefaInput(item.tarefa)
+      setEdit(item)
+  }
+
+  async function handleUpdateTarefa() {
+    const docRef = doc(db, "tarefas", edit?.id)
+    await updateDoc(docRef, {
+      tarefa: tarefaInput
+    })
+    .then(() => {
+      console.log("tarefa atualizada")
+      setTarefaInput("")
+      setEdit({})
+    })
+    .catch(() => {
+      console.log('erro ao atualizar')
+      setTarefaInput("");
+      setEdit({});
+    })
+  }
+
   return (
     <div className="admin-container">
-      <h1>Minhas Tarefas</h1>
+      <span>Adcione sua tarefa</span>
 
       <form onSubmit={handleRegister}>
-        <textarea
+        <input
           value={tarefaInput}
           onChange={(e) => setTarefaInput(e.target.value)}
           placeholder="Digite sua tarefa..."
         />
-        <button type="submit" className="btn-register">
-          Registar Tarefa
-        </button>
-      </form>
 
+        {Object.keys(edit).length > 0 ? (
+          <button type="submit" className="btn-atualizar">
+            Atualizar Tarefa
+          </button>
+        ) : (
+          <button type="submit" className="btn-register">
+            Registrar Tarefa
+          </button>
+        )}
+      </form>
+      <span>Quadro de Tarefas</span>
       {tarefas.map((item) => {
         return (
           <article className="list" key={item.id}>
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
             <p>{item.tarefa}</p>
-
-            <div>
-              <ion-icon className="edit" name="create-outline"></ion-icon>
-              <ion-icon name="trash"></ion-icon>
+            <div className="icons">
+              <button onClick={() => editTarefa(item)}>
+                <ion-icon name="create-outline"></ion-icon>
+              </button>
+              <button
+                className="btn-concluir"
+                onClick={() => deleteTarefa(item.id)}
+              >
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+              </button>
             </div>
           </article>
-        );})}
+        );
+      })}
 
-      <button class="btn-logout" onClick={handleLogout}>
+      <button className="btn-logout" onClick={handleLogout}>
         Sair
       </button>
     </div>
