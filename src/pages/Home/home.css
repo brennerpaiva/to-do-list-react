@@ -67,16 +67,15 @@ div.campo > input {
     background-color: #bababa;
     font-size: 1em;
     height: 100%;
-    width: 91.5%;
+    width: 100%;
     border-radius: 8px;
     border: 0px;
     padding: 8px;
-    transform: translateY(-6.8px);
+    transform: translateY(-39.8px);
 }
 
 div.campo > input:focus-within{
     background-color: white;
-
 }
 
 form > input[type=submit] {
@@ -145,6 +144,17 @@ form > .button-link {
         float: right;
         width: 70%;
     }
+
+    div.campo > input {
+    background-color: #bababa;
+    font-size: 1em;
+    height: 100%;
+    width: 90.75%;
+    border-radius: 8px;
+    border: 0px;
+    padding: 8px;
+    transform: translateY(-8.2px);
+}
 }
 
 @media screen and (min-width:992px) { /* Config para desktop */
@@ -153,13 +163,24 @@ form > .button-link {
         background: linear-gradient(23deg, rgba(186,186,186,1) 0%, rgba(186, 186, 186, 0.766) 53%, rgba(255,255,255,1) 100%);
     }
 
+    div.campo > input {
+        background-color: #bababa;
+        font-size: 1em;
+        height: 100%;
+        width: 91.5%;
+        border-radius: 8px;
+        border: 0px;
+        padding: 8px;
+        transform: translateY(-9.1px);
+    }
+
     section#login {
         width: 990px;
         height: 350px;
     }
 
     section#login > div#imagem {
-        float: right;
+        float: left;
         width: 50%;
         height: 100%;
 

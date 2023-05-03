@@ -2,20 +2,41 @@ import { useState, useEffect } from "react";
 
 import { auth, db } from "../../firebaseConection";
 import { signOut } from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, onSnapshot, query, orderBy, where } from "firebase/firestore";
 
 import "./admin.css";
 
 export default function Admin() {
-
   const [tarefaInput, setTarefaInput] = useState("");
   const [user, setUser] = useState("");
+
+  const [tarefas, setTarefas] = useState([]);
 
   useEffect(() => {
     async function loadTarefas() {
       const userDetail = localStorage.getItem("@detailUser");
       setUser(JSON.parse(userDetail));
-      console.log(user)
+      console.log(user);
+
+      if (userDetail) {
+        const data = JSON.parse(userDetail);
+
+        const tarefaRef = collection(db, "tarefas")
+        const q = query(tarefaRef, orderBy("created", "desc"), where("userUid", "==", data?.uid))
+        const unsub = onSnapshot(q, (snapshot) => {
+          let lista = [];
+
+          snapshot.forEach((doc) => {
+            lista.push({
+              id: doc.id,
+              tarefa: doc.data().tarefa,
+              userUid: doc.data().userUid,
+            })
+          })
+
+          setTarefas(lista);
+        })
+      }
     }
     
     loadTarefas();
@@ -32,11 +53,11 @@ export default function Admin() {
     await addDoc(collection(db, "tarefas"), {
       tarefa: tarefaInput,
       created: new Date(),
-      userUid: user?.uid
+      userUid: user?.uid,
     })
       .then(() => {
         console.log("tarefa Registrada com sucesso");
-        setTarefaInput("")
+        setTarefaInput("");
       })
       .catch((error) => {
         console.log("erro ao registrar" + error);
@@ -62,14 +83,17 @@ export default function Admin() {
         </button>
       </form>
 
-      <article className="list">
-        <p>Estudar JavaScript e ReactJS</p>
+      {tarefas.map((item) => {
+        return(
+        <article className="list" key={item.id}>
+          <p>{item.tarefa}</p>
 
-        <div>
-          <button>Editar</button>
-          <button className="btn-delete">Concluir</button>
-        </div>
-      </article>
+          <div>
+            <button>Editar</button>
+            <button className="btn-delete">Concluir</button>
+          </div>
+        </article>
+      )})}
 
       <button className="btn-logout" onClick={handleLogout}>
         Sair
