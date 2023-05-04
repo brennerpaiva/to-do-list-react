@@ -158,16 +158,6 @@ form > a.botao > i {
     width: 70%;
   }
 
-  div.campo > input {
-    background-color: #bababa;
-    font-size: 1em;
-    height: 100%;
-    width: 90.75%;
-    border-radius: 8px;
-    border: 0px;
-    padding: 8px;
-    transform: translateY(-9.1px);
-  }
 }
 
 @media screen and (min-width: 992px) {
