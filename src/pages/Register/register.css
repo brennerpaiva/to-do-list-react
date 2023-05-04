@@ -1,3 +1,8 @@
+body {
+        background: rgb(186,186,186);
+        background: linear-gradient(23deg, rgba(186,186,186,1) 0%, rgba(186, 186, 186, 0.766) 53%, rgba(255,255,255,1) 100%);
+    }
+
 section#register {
     position: absolute;
     top: 50%;
@@ -10,7 +15,6 @@ section#register {
     border-radius: 20px;
     box-shadow: -5px -5px 12px #7d7d7d,
                 5px 5px 12px #f7f7f7;
-
     transition: width 0.3s, height 0.3s;
     transition-timing-function: ease;
     transform: translate(-50%, -50%);
@@ -68,7 +72,7 @@ div.campo > input {
     border-radius: 8px;
     border: 0px;
     padding: 8px;
-    transform: translateY(-9.1px);
+    transform: translateY(-10px);
 }
 
 div.campo > input:focus-within{
@@ -122,7 +126,7 @@ form > a.botao > i {
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: 5px 0;
+    margin-top: 20px;
 }
 
 @media screen and (min-width: 768px) {  
@@ -156,20 +160,21 @@ form > a.botao > i {
 }
 
 @media screen and (min-width:992px) { /* Config para desktop */
-    body {
-        background: rgb(186,186,186);
-        background: linear-gradient(23deg, rgba(186,186,186,1) 0%, rgba(186, 186, 186, 0.766) 53%, rgba(255,255,255,1) 100%);
+
+    div.campo {
+        align-items: center;
+        justify-content: center;
     }
 
     div.campo > input {
     background-color: #bababa;
+    border: 1px solid #575757;
     font-size: 1em;
-    height: 100%;
+    height: 37px;
     width: 91.5%;
     border-radius: 8px;
     border: 0px;
     padding: 8px;
-    transform: translateY(-6.8px);
 }
 
     section#register {

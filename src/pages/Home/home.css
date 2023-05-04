@@ -117,6 +117,7 @@ form > button:hover {
 
 form > a.botao > i {
     font-size: 0.8em;
+    
 }
 
 form > .button-link {
@@ -124,7 +125,8 @@ form > .button-link {
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin: 5px 0;
+    margin-top: 20px;
+    
 }
 
 @media screen and (min-width: 768px) {  
@@ -171,7 +173,7 @@ form > .button-link {
         border-radius: 8px;
         border: 0px;
         padding: 8px;
-        transform: translateY(-9.1px);
+        transform: translateY(-8.5px);
     }
 
     section#login {

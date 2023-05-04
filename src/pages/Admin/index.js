@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-import icon from "../../images/checkmark-circle-outline.svg";
 import { auth, db } from "../../firebaseConection";
 import { signOut } from "firebase/auth";
 import {
@@ -119,8 +118,9 @@ export default function Admin() {
     <div className="admin-container">
       <span>Adcione sua tarefa</span>
 
-      <form onSubmit={handleRegister}>
+      <form className="form-tarefas" onSubmit={handleRegister}>
         <input
+        className="taskk"
           value={tarefaInput}
           onChange={(e) => setTarefaInput(e.target.value)}
           placeholder="Digite sua tarefa..."

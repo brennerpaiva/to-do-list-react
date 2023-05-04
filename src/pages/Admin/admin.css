@@ -15,7 +15,7 @@ span {
     font-weight: bold;
 }
 
-form {
+.form-tarefas {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -33,6 +33,7 @@ input {
 }
 
 .btn-register {
+    background-color: #297973;
     width: 180px;
     height: 50px;
     justify-content: center;
@@ -40,6 +41,13 @@ input {
     padding: 0;
     border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
+    transition: all 0.5s ease-out
+}
+
+.btn-register:hover {
+    background-color: transparent;
+    color: #297973;
 }
 
 .btn-atualizar{
@@ -50,7 +58,15 @@ input {
     padding: 0;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #297973;
+    background-color: #6f6f6f;
+    color: white;
+    font-weight: bold;
+    transition: all 0.5s ease-out
+}
+
+.btn-atualizar:hover{
+    background-color: transparent;
+    color: #6f6f6f;
 }
 
 .list{
@@ -96,19 +112,23 @@ ion-icon{
     border: 0;
 }
 
-.btn-delete {
-    color: pink;
-    background-color: transparent;
-}
-
 .btn-logout {
-    position: absolute;
+    cursor: pointer;
+    position: fixed;
     bottom: 6%;
     left: 4%;
     height: 60px;
     width: 60px;
     border-radius: 30px;
     border: 0;
+    font-size: 16px;
     font-weight: bold;
     background-color: #297973;
+    transition: all 0.5s ease-out
+}
+
+.btn-logout:hover {
+    background-color: transparent;
+    color: #297973;
+    border: 2px solid #297973;
 }
