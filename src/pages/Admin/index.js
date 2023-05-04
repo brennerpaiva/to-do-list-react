@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./admin.css";
 import { auth, db } from "../../firebaseConection";
 import { signOut } from "firebase/auth";
 import {
@@ -14,7 +14,6 @@ import {
   updateDoc,
 } from "firebase/firestore";
 
-import "./admin.css";
 
 export default function Admin() {
   const [tarefaInput, setTarefaInput] = useState("");
@@ -116,11 +115,15 @@ export default function Admin() {
 
   return (
     <div className="admin-container">
-      <span>Adcione sua tarefa</span>
+      {Object.keys(edit).length > 0 ? (
+        <span>Edite sua tarefa</span>
+      ) : (
+        <span>Adcione sua tarefa</span>
+      )}
 
       <form className="form-tarefas" onSubmit={handleRegister}>
         <input
-        className="taskk"
+          className="input-tarefa"
           value={tarefaInput}
           onChange={(e) => setTarefaInput(e.target.value)}
           placeholder="Digite sua tarefa..."
@@ -128,15 +131,15 @@ export default function Admin() {
 
         {Object.keys(edit).length > 0 ? (
           <button type="submit" className="btn-atualizar">
-            Atualizar Tarefa
+            Atualizar tarefa
           </button>
         ) : (
           <button type="submit" className="btn-register">
-            Registrar Tarefa
+            Registrar tarefa
           </button>
         )}
       </form>
-      <span>Quadro de Tarefas</span>
+      <span>Quadro de tarefas</span>
       {tarefas.map((item) => {
         return (
           <article className="list" key={item.id}>

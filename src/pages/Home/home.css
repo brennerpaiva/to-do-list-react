@@ -71,7 +71,7 @@ div.campo > input {
     border-radius: 8px;
     border: 0px;
     padding: 8px;
-    transform: translateY(-39.8px);
+    transform: translateY(-39.1px);
 }
 
 div.campo > input:focus-within{
@@ -87,8 +87,15 @@ form > input[type=submit] {
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer
+    
 }
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
 
 form > input[type=submit]:hover {
     background-color: #2b4442;
@@ -109,6 +116,7 @@ form > button {
     border-radius: 5px;
     text-decoration: none;
     color: white;
+    transition: all 0.5s ease-out
 }
 
 form > button:hover {
@@ -116,8 +124,7 @@ form > button:hover {
 }
 
 form > a.botao > i {
-    font-size: 0.8em;
-    
+    font-size: 0.8em;    
 }
 
 form > .button-link {
@@ -126,6 +133,7 @@ form > .button-link {
     text-align: center;
     align-items: center;
     margin-top: 20px;
+    color: #297973;;
     
 }
 
@@ -173,7 +181,7 @@ form > .button-link {
         border-radius: 8px;
         border: 0px;
         padding: 8px;
-        transform: translateY(-8.5px);
+        transform: translateY(-7.8px);
     }
 
     section#login {
