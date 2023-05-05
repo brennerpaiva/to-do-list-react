@@ -118,7 +118,7 @@ export default function Admin() {
       {Object.keys(edit).length > 0 ? (
         <span>Edite sua tarefa</span>
       ) : (
-        <span>Adcione sua tarefa</span>
+        <span>Adicione sua tarefa</span>
       )}
 
       <form className="form-tarefas" onSubmit={handleRegister}>

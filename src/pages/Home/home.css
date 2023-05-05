@@ -151,11 +151,10 @@ form > .button-link {
     background-color: #bababa;
     font-size: 1em;
     height: 100%;
-    width: 90.75%;
+    width: 100%;
     border-radius: 8px;
     border: 0px;
     padding: 8px;
-    transform: translateY(-8.2px);
   }
 }
 
@@ -179,7 +178,7 @@ form > .button-link {
     border-radius: 8px;
     border: 0px;
     padding: 8px;
-    transform: translateY(-9.15px);
+    transform: translateY(-9.1px);
   }
 
   section#login {
