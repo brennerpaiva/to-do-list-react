@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1>To-do List - React</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Visão geral
 
-In the project directory, you can run:
+### 🗂️ O Projeto
+A aplicação foi desenvolvida com o objetivo de demonstrar a integração do Firebase (serviço de desenvolvimento de aplicativos móveis e da web da Google) com o Firestore Database, um banco de dados NoSQL em tempo real. A combinação dessas tecnologias permite a criação de um sistema de gerenciamento de tarefas eficiente e em tempo real.
 
-### `npm start`
+A funcionalidade principal da aplicação é a criação e gerenciamento de tarefas. Os usuários podem criar novas tarefas, marcá-las como concluídas, editar seus detalhes e excluí-las. Além disso, a aplicação oferece recursos de autenticação, como login e cadastro de novos usuários, garantindo que apenas usuários autenticados possam acessar e modificar as tarefas.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔗 <a href="https://to-do-list-brennerpaiva.netlify.app/" target="_blank">Visualizar Deploy</a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ⚙️ Recursos
 
-### `npm test`
+<strong>Autenticação com Firebase:</strong> A aplicação utiliza o recurso de autenticação fornecido pelo Firebase para permitir que os usuários façam login e cadastro na plataforma.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<strong>Firestore Database:</strong> O Firestore é um banco de dados NoSQL em tempo real fornecido pelo Firebase. Ele é utilizado para armazenar e sincronizar as tarefas em tempo real, permitindo uma experiência colaborativa e instantânea.
 
-### `npm run build`
+<strong>Criação, Edição e Exclusão de Tarefas:</strong> Os usuários podem criar novas tarefas, editar seus detalhes, marcar como concluídas e excluir tarefas existentes. Essas ações são refletidas em tempo real em todos os dispositivos conectados.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<strong>Proteção de Rotas:</strong> As rotas da aplicação são protegidas, garantindo que apenas usuários autenticados possam acessar e interagir com as tarefas.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📌 Objetivo:
+* Aprender a utilizar o recurso de autenticação do Firebase para criar sistemas de login e cadastro em sua aplicação.
+* Explorar e praticar o uso do Firestore Database, um banco de dados NoSQL em tempo real, para armazenar e sincronizar dados em tempo real.
+* Implementar funcionalidades de criação, edição e exclusão de tarefas em sua aplicação, proporcionando uma experiência interativa para os usuários.
+* Ganhar experiência na proteção de rotas e controle de acesso em uma aplicação web, garantindo a segurança dos dados e limitando o acesso a áreas restritas apenas a usuários autenticados.
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🖥️ Instruções para rodar localmente:
+#### É possível acessar este projeto pelo deploy, mas caso queira testa-lo localmente para analisar ou até fazer modificações, siga as instruções abaixo!
 
-### `npm run eject`
+<strong> 1️ • Clone o repositório usando o GIT </strong>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+git clone git@github.com:brennerpaiva/to-do-list-react.git
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<strong> 2️ • Instale as dependências do projeto</strong>
 
-## Learn More
+```
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<strong> 3 • Inicie a aplicações em um servidor local</strong>
 
-### Code Splitting
+```
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 🛠️ Linguagens e ferramentas: 
+• <img width="20px" src="https://skillicons.dev/icons?i=react" alt="testing library icon"/> ReactJS\
+• <img width="20px" src="https://skillicons.dev/icons?i=javascript" alt="javascript icon"/> JavaScript\
+• <img width="20px" src="https://skillicons.dev/icons?i=firebase" alt="firebase icon"/> Firebase\
+</div>
