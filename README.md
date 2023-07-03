@@ -60,5 +60,5 @@ npm run dev
 ### 🛠️ Linguagens e ferramentas: 
 • <img width="20px" src="https://skillicons.dev/icons?i=react" alt="testing library icon"/> ReactJS\
 • <img width="20px" src="https://skillicons.dev/icons?i=javascript" alt="javascript icon"/> JavaScript\
-• <img width="20px" src="https://skillicons.dev/icons?i=firebase" alt="firebase icon"/> Firebase\
+• <img width="20px" src="https://skillicons.dev/icons?i=firebase" alt="firebase icon"/> Firebase
 </div>
