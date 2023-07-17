@@ -2,6 +2,7 @@
   <h1>To-do List - React</h1>
 </div>
 
+![480shots_so](https://github.com/brennerpaiva/to-do-list-react/assets/114958953/9874338a-4b4b-457c-aae3-0380ceefd89f)
 ## Visão geral
 
 ### 🗂️ O Projeto
