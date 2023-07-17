@@ -24,7 +24,7 @@ A funcionalidade principal da aplicação é a criação e gerenciamento de tare
 
 ### 📌 Objetivo:
 * Aprender a utilizar o recurso de autenticação do Firebase para criar sistemas de login e cadastro em sua aplicação.
-* Explorar e praticar o uso do Firestore Database, um banco de dados NoSQL em tempo real, para armazenar e sincronizar dados em tempo real.
+* Explorar e praticar o uso do Firestore Database, um banco de dados NoSQL em tempo real, para armazenar e sincronizar dados.
 * Implementar funcionalidades de criação, edição e exclusão de tarefas em sua aplicação, proporcionando uma experiência interativa para os usuários.
 * Ganhar experiência na proteção de rotas e controle de acesso em uma aplicação web, garantindo a segurança dos dados e limitando o acesso a áreas restritas apenas a usuários autenticados.
 <br>
